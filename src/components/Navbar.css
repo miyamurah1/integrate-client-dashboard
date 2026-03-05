@@ -1,0 +1,46 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--navbar-h);
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+.navbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.navbar-logo { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.logo-dot { width: 10px; height: 10px; border-radius: 50%; background: #7c5cfc; box-shadow: 0 0 8px #7c5cfc; }
+.logo-text { font-weight: 700; font-size: 16px; }
+.navbar-links { display: flex; list-style: none; gap: 4px; flex: 1; }
+.nav-link {
+  background: none; border: none; color: var(--muted);
+  font-family: inherit; font-size: 14px; font-weight: 500;
+  padding: 6px 14px; border-radius: 8px; cursor: pointer; transition: all 0.2s;
+}
+.nav-link:hover { color: var(--text); background: var(--bg3); }
+.nav-link.active { color: var(--text); background: var(--bg3); font-weight: 600; }
+.navbar-right { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.icon-btn { background: none; border: none; cursor: pointer; font-size: 16px; padding: 6px; border-radius: 8px; transition: background 0.2s; }
+.icon-btn:hover { background: var(--bg3); }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; margin-left: auto; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+.mobile-menu { list-style: none; background: var(--bg2); border-top: 1px solid var(--border); padding: 8px 16px 16px; display: flex; flex-direction: column; gap: 4px; }
+.mobile-link { background: none; border: none; color: var(--muted); font-family: inherit; font-size: 15px; font-weight: 500; padding: 10px 12px; border-radius: 8px; cursor: pointer; width: 100%; text-align: left; transition: all 0.2s; }
+.mobile-link:hover { color: var(--text); background: var(--bg3); }
+.mobile-link.active { color: var(--text); background: var(--bg3); font-weight: 600; }
+
+@media (max-width: 768px) {
+  .navbar { height: auto; }
+  .navbar-inner { height: 56px; padding: 0 16px; gap: 0; }
+  .navbar-links { display: none; }
+  .navbar-right { display: none; }
+  .hamburger { display: flex; }
+  :root { --navbar-h: 56px; }
+}

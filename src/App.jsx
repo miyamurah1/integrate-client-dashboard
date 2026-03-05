@@ -1,35 +1,27 @@
-import Sidebar from "./components/Sidebar";
-import Topbar from "./components/Topbar";
-import StatCard from "./components/StatCard";
-import InfoCard from "./components/InfoCard";
-import ChartSection from "./components/ChartSection";
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
+import Guests from "./pages/Guests";
+import Reservations from "./pages/Reservations";
+import Rooms from "./pages/Rooms";
+import Restaurant from "./pages/Restaurant";
 import "./App.css";
 
-function App() {
+export default function App() {
+  const [activePage, setActivePage] = useState("Dashboard");
+
+  const pages = {
+    Dashboard: <Dashboard />,
+    Guests: <Guests />,
+    Reservations: <Reservations />,
+    Rooms: <Rooms />,
+    Restaurant: <Restaurant />,
+  };
+
   return (
-    <div className="layout">
-      <Sidebar />
-
-      <div className="main">
-        <Topbar />
-
-        {/* Stats Section */}
-        <div className="stats">
-          <StatCard title="Total Revenue" value="$24,500" growth="+12%" />
-          <StatCard title="Active Users" value="1,245" growth="+8%" />
-          <StatCard title="New Signups" value="342" growth="+5%" />
-        </div>
-
-        {/* Grid Section */}
-        <div className="grid">
-          <ChartSection />
-          <InfoCard title="Room Occupancy" />
-          <InfoCard title="Bookings Summary" />
-          <InfoCard title="Calendar Section" />
-        </div>
-      </div>
+    <div className="app-shell">
+      <Navbar activePage={activePage} setActivePage={setActivePage} />
+      <main className="main-content">{pages[activePage]}</main>
     </div>
   );
 }
-
-export default App;

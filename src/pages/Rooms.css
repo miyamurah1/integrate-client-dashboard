@@ -1,6 +1,45 @@
-.rooms-grid { disp.rooms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
-.room-item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-.room-emoji { font-size: 32px; background: var(--bg3); width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-.room-item-name { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
-.room-item-type { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-.room-item-meta { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; padding: 12px; background: var(--bg3); border-radius: 10px; }
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.room-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.room-emoji {
+  font-size: 32px;
+  background: var(--bg3);
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-item-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.room-item-type {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.room-item-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 12px;
+  background: var(--bg3);
+  border-radius: 10px;
+}
